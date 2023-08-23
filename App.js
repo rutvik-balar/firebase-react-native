@@ -1,22 +1,26 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-} from 'react-native';
 import Google from './src/Google';
 import Twitter from './src/Twitter';
+import OnClicknotification from './src/OnClicknotification';
+import PushNotification from './src/PushNotification';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './src/HomeScreen';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <SafeAreaView style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-      {/* <Google/> */}
-      {/* <Twitter/> */}
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Google" component={Google} />
+        <Stack.Screen name="Twitter" component={Twitter} />
+        <Stack.Screen name="PushNotification" component={PushNotification} />
+        <Stack.Screen name="OnClicknotification" component={OnClicknotification} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-});
 
 export default App;
