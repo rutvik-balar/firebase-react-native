@@ -28,6 +28,9 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('Hooks2')}
                 style={styles.container}><Text>useMemo/useCallback</Text></TouchableOpacity>
 
+            <TouchableOpacity onPress={() => navigation.navigate('ImagePicker')}
+                style={styles.container}><Text>ImagePicker</Text></TouchableOpacity>
+
         </SafeAreaView>
     );
 }

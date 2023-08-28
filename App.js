@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/HomeScreen';
 import Hooks from './src/Hooks';
 import Hooks2 from './src/Hooks2';
+import ImagePicker from './src/ImagePicker';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ function App() {
         <Stack.Screen name="OnClicknotification" component={OnClicknotification} />
         <Stack.Screen name="Hooks" component={Hooks} />
         <Stack.Screen name="Hooks2" component={Hooks2} />
+        <Stack.Screen name="ImagePicker" component={ImagePicker} />
       </Stack.Navigator>
     </NavigationContainer>
   );
