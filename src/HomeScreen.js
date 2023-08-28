@@ -22,6 +22,12 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('PushNotification')}
                 style={styles.container}><Text>PushNotification </Text></TouchableOpacity>
 
+            <TouchableOpacity onPress={() => navigation.navigate('Hooks')}
+                style={styles.container}><Text>useState/useRef</Text></TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Hooks2')}
+                style={styles.container}><Text>useMemo/useCallback</Text></TouchableOpacity>
+
         </SafeAreaView>
     );
 }

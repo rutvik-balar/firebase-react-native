@@ -6,6 +6,8 @@ import PushNotification from './src/PushNotification';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/HomeScreen';
+import Hooks from './src/Hooks';
+import Hooks2 from './src/Hooks2';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,8 @@ function App() {
         <Stack.Screen name="Twitter" component={Twitter} />
         <Stack.Screen name="PushNotification" component={PushNotification} />
         <Stack.Screen name="OnClicknotification" component={OnClicknotification} />
+        <Stack.Screen name="Hooks" component={Hooks} />
+        <Stack.Screen name="Hooks2" component={Hooks2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
