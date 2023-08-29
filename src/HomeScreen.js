@@ -28,8 +28,8 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('Hooks2')}
                 style={styles.container}><Text>useMemo/useCallback</Text></TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('ImagePicker')}
-                style={styles.container}><Text>ImagePicker</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('ImagePickers')}
+                style={styles.container}><Text>ImagePickers</Text></TouchableOpacity>
 
         </SafeAreaView>
     );

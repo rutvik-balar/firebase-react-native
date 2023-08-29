@@ -54,6 +54,8 @@
     <string>camera permition required for uploading post or profile</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
     <string>camera permition required for uploading post or profile</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>Microphone use for new feature</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
