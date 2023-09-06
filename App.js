@@ -9,6 +9,7 @@ import HomeScreen from './src/HomeScreen';
 import Hooks from './src/Hooks';
 import Hooks2 from './src/Hooks2';
 import ImagePickers from './src/ImagePickers';
+import TesttoSpeach from './src/TesttoSpeach';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ function App() {
         <Stack.Screen name="Hooks" component={Hooks} />
         <Stack.Screen name="Hooks2" component={Hooks2} />
         <Stack.Screen name="ImagePickers" component={ImagePickers} />
+        <Stack.Screen name="TesttoSpeach" component={TesttoSpeach} />
       </Stack.Navigator>
     </NavigationContainer>
   );

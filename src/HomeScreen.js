@@ -31,6 +31,9 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('ImagePickers')}
                 style={styles.container}><Text>ImagePickers</Text></TouchableOpacity>
 
+            <TouchableOpacity onPress={() => navigation.navigate('TesttoSpeach')}
+                style={styles.container}><Text>text to speach</Text></TouchableOpacity>
+
         </SafeAreaView>
     );
 }
