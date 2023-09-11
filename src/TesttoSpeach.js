@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import all the components we are going to use
 import {
@@ -14,6 +14,7 @@ import {
 
 // import slider for the tuning of pitch and speed
 import Slider from '@react-native-community/slider';
+import Sound from 'react-native-sound';
 
 // import Tts Text to Speech
 import Tts from 'react-native-tts';
@@ -27,7 +28,7 @@ const TesttoSpeach = () => {
   const [
     text,
     setText
-  ] = useState('Enter Text like Hello About React');
+  ] = useState('Today is a new opportunity to shine brightly. Embrace the day with a smile and a positive attitude. You are capable of achieving great things, and this morning is the first step toward your dreams. Believe in yourself, take a deep breath, and lets make this day amazing. Remember, youve got the power to create a wonderful day, so go out there and make it happen');
 
   useEffect(() => {
     Tts.addEventListener(
@@ -66,7 +67,7 @@ const TesttoSpeach = () => {
     const availableVoices = voices
       .filter((v) => !v.networkConnectionRequired && !v.notInstalled)
       .map((v) => {
-        return {id: v.id, name: v.name, language: v.language};
+        return { id: v.id, name: v.name, language: v.language };
       });
     let selectedVoice = null;
     if (voices && voices.length > 0) {
@@ -88,6 +89,33 @@ const TesttoSpeach = () => {
   };
 
   const readText = async () => {
+
+
+    // Enable playback in silence mode
+    Sound.setCategory('Playback');
+
+    // Load the sound file 'whoosh.mp3' from the app bundle
+    // See notes below about preloading sounds within initialization code below.
+    var whoosh = new Sound('om.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      // loaded successfully
+      console.log('duration in seconds: ' + whoosh.getDuration() + 'number of channels: ' + whoosh.getNumberOfChannels());
+      // whoosh.setVolume(0.1);
+
+      // Play the sound with an onEnd callback
+      whoosh.play((success) => {
+        if (success) {
+          console.log('successfully finished playing');
+        } else {
+          console.log('playback failed due to audio decoding errors');
+        }
+      });
+    });
+
+    // Tts.setVolume(0.5);
     Tts.stop();
     Tts.speak(text);
   };
@@ -114,12 +142,12 @@ const TesttoSpeach = () => {
     setSelectedVoice(voice.id);
   };
 
-  const renderVoiceItem = ({item}) => {
+  const renderVoiceItem = ({ item }) => {
     return (
       <TouchableOpacity
         style={{
-          backgroundColor: selectedVoice === item.id ? 
-          '#DDA0DD' : '#5F9EA0',
+          backgroundColor: selectedVoice === item.id ?
+            '#DDA0DD' : '#5F9EA0',
         }}
         onPress={() => onVoicePress(item)}>
         <Text style={styles.buttonTextStyle}>
@@ -179,7 +207,7 @@ const TesttoSpeach = () => {
           Select the Voice from below
         </Text>
         <FlatList
-          style={{width: '100%', marginTop: 5}}
+          style={{ width: '100%', marginTop: 5 }}
           keyExtractor={(item) => item.id}
           renderItem={renderVoiceItem}
           extraData={selectedVoice}
